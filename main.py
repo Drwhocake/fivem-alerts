@@ -3,20 +3,24 @@ from Modules.alert import *
 
 import Modules.jsonHandler
 from Modules.jsonHandler import *
+import time
 
 alertedplayers = []
 
 def main():
+	alert("Fivem Player Alert", "Script is now running")
 	# loop that runs every 2.5 minutes
 	while True:
 		onlinePlayers = searchJSON()
 		for player in onlinePlayers:
-			server = player.split(":")[0]
-			name = player.split(":")[1]
-			if player not in alertedplayers:
-				alert(server, name + " is now online!")
-				alertedplayers.append(player)
-	time.sleep(150)
+			for server in player:
+				name = player[server]
+				#check the name of the player against the list of players that have already been alerted per server
+				if name not in alertedplayers:
+					alert(server, name + " is now online!")
+					alertedplayers.append(name)
+		time.sleep(150)
+
 
 
 if __name__ == '__main__':
