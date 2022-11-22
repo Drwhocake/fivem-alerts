@@ -8,6 +8,7 @@ import time
 alertedplayers = []
 
 def main():
+
 	alert("Fivem Player Alert", "Script is now running")
 	# loop that runs every 2.5 minutes
 	while True:
@@ -24,4 +25,7 @@ def main():
 
 
 if __name__ == '__main__':
+	# run script in the background
+
+
 	main()
