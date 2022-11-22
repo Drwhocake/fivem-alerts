@@ -1,0 +1,7 @@
+people = {
+	'any Identifier as seen in players.json' : 'Name'
+}
+
+json = {
+	'Server Name' :'Link to the servers player.json'
+}
