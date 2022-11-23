@@ -1,4 +1,4 @@
-# Python Fivem online / offline status for players
+# Python Fivem online / offline alerts
 
 ## requirements
 - time
