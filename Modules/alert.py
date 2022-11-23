@@ -2,23 +2,6 @@ from win10toast import ToastNotifier
 import threading
 import time
 
-def test ():
-	toaster = ToastNotifier()
-	toaster.show_toast("Hello World!!!",
-	                   "Python is 10 seconds awsm!",
-	                   icon_path="custom.ico",
-	                   duration=10)
-
-	toaster.show_toast("Example two",
-	                   "This notification is in it's own thread!",
-	                   icon_path=None,
-	                   duration=5,
-	                   threaded=True)
-	# Wait for threaded notification to finish
-
-
-
-
 queue = []
 
 def alert (title, message):
@@ -31,7 +14,6 @@ def alert (title, message):
 	else:
 		# if there is a thread running then do nothing
 		pass
-
 
 def runAlerts():
 	# loop through the queue and display each alert

@@ -10,11 +10,9 @@ def searchJSON():
 		with urllib.request.urlopen(cfg.json[server]) as url:
 			data = json.loads(url.read().decode())
 			#loop through the json file as players
-			#count players then print the count
 			for player in data:
-				#loop through the identifiers of each player then stop
+				#loop through the identifiers of each player
 				for identifier in player['identifiers']:
-
 					#loop through the identifiers in the config file
 					for key in cfg.people:
 						#if the identifier matches one in the config file

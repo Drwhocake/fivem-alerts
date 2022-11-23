@@ -5,3 +5,5 @@ people = {
 json = {
 	'Server Name' :'Link to the servers player.json'
 }
+
+refreshTime = 150 # time is in seconds so  2.5 minutes

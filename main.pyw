@@ -1,3 +1,5 @@
+import config as cfg
+
 import Modules.alert
 from Modules.alert import *
 
@@ -13,7 +15,6 @@ def main():
 	# loop that runs every 2.5 minutes
 	while True:
 		onlinePlayers = searchJSON()
-
 		for player in onlinePlayers:
 			for server in player:
 				name = player[server]
@@ -31,12 +32,9 @@ def main():
 					alert(server, name + " is now offline!")
 				alertedplayers.remove(player)
 
-		time.sleep(150)
+		time.sleep(cfg.refreshTime)
 
 
 
 if __name__ == '__main__':
-	# run script in the background
-
-
 	main()
