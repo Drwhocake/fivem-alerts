@@ -7,9 +7,10 @@ def searchJSON():
 	#for each server in the config file
 	for server in cfg.json:
 		#open json file from url
-		with urllib.request.urlopen(cfg.json[server]) as url:
+		try:
+			url = urllib.request.urlopen(cfg.json[server])
 			data = json.loads(url.read().decode())
-			#loop through the json file as players
+			#for each player in the json file
 			for player in data:
 				#loop through the identifiers of each player
 				for identifier in player['identifiers']:
@@ -20,6 +21,8 @@ def searchJSON():
 							#store the name of the player under the server name multiple players can be stored under the same server name
 							onlinePlayers.append({server:cfg.people[key]})
 							break
+		except:
+			print("could not open url " + cfg.json[server])
 
 
 	return onlinePlayers
