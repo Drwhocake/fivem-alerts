@@ -19,7 +19,7 @@ def runAlerts():
 	# loop through the queue and display each alert
 	for alert in queue:
 		toaster = ToastNotifier()
-		toaster.show_toast(alert[0], alert[1], icon_path=None, duration=5, threaded=True)
+		toaster.show_toast(alert[0], alert[1], icon_path=None, duration=10, threaded=True)
 		# remove the alert from the queue
 		queue.remove(alert)
 		# wait for the alert to finish
